@@ -4,7 +4,9 @@
 
 ## 1. 推送到 GitHub
 
-先在 GitHub 创建一个**私有**空仓库（不要勾选自动生成 README），然后在项目目录执行：
+先在 GitHub 创建一个**私有**空仓库（不要勾选自动生成 README）。
+
+然后双击项目根目录的 `push-to-github.bat`，粘贴仓库地址；也可以在项目目录执行：
 
 ```bash
 git remote add origin https://github.com/你的用户名/minecraft-skin-lab.git

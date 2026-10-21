@@ -40,7 +40,7 @@ public/audio/friends-wine-dj.mp3
 
 项目附带 `render.yaml` 和详细步骤，可部署到 Render 免费 Web Service，让其他人通过公网地址访问：
 
-见 [DEPLOY.md](DEPLOY.md)。免费实例会休眠，首次访问可能需要几十秒冷启动。
+见 [DEPLOY.md](DEPLOY.md)。项目已初始化为 Git 仓库，可用 `push-to-github.bat` 推送到 GitHub。免费实例会休眠，首次访问可能需要几十秒冷启动。
 
 ## 本地运行
 
