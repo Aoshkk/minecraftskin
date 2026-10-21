@@ -1,0 +1,14 @@
+node_modules/
+dist/
+.edge-profile*/
+.tmp-cdp.mjs
+preview-*.png
+front-*.png
+back-*.png
+mobile-*.png
+tmp-*.png
+*-skin*.png
+dream-*.png
+jeb-*.png
+notch-*.png
+*.log

@@ -1,0 +1,24 @@
+{
+  "name": "minecraft-skin-lab",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Minecraft 正版 ID 3D 皮肤查看与下载",
+  "author": "Aoshkk2",
+  "engines": {
+    "node": ">=20 <25"
+  },
+  "scripts": {
+    "dev": "node server.js --dev",
+    "build": "vite build",
+    "start": "node server.js",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "skinview3d": "^3.4.2",
+    "three": "^0.156.0"
+  },
+  "devDependencies": {
+    "vite": "^6.0.0"
+  }
+}

@@ -1,0 +1,387 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#080b09" />
+    <meta
+      name="description"
+      content="输入 Minecraft Java 版正版 ID，360° 查看立体皮肤，并一键下载原始 64×64 皮肤 PNG。"
+    />
+    <meta property="og:title" content="SKINLAB — Minecraft 正版皮肤实验室" />
+    <meta
+      property="og:description"
+      content="输入正版 ID，把方块人转起来。3D 皮肤预览 + 原始 PNG 下载。"
+    />
+    <meta property="og:type" content="website" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>SKINLAB — Minecraft 正版皮肤 3D 查看与下载</title>
+  </head>
+  <body>
+    <div class="ambient" aria-hidden="true">
+      <span class="ambient-orb ambient-orb--lime"></span>
+      <span class="ambient-orb ambient-orb--warm"></span>
+      <span class="ambient-grid"></span>
+      <span class="float-pixel float-pixel--1"></span>
+      <span class="float-pixel float-pixel--2"></span>
+      <span class="float-pixel float-pixel--3"></span>
+      <span class="float-pixel float-pixel--4"></span>
+    </div>
+
+    <div class="site-shell">
+      <p class="author-credit">作者: <span>Aoshkk2</span></p>
+      <header class="site-header">
+        <a class="brand" href="/" aria-label="SKINLAB 首页">
+          <svg class="brand-cube" viewBox="0 0 44 48" aria-hidden="true">
+            <path d="M22 2 42 13v22L22 46 2 35V13Z" fill="#0d130e" />
+            <path d="M22 5.5 38.8 15 22 24.4 5.2 15Z" fill="#c8ff62" />
+            <path d="M5.2 15 22 24.4V43L5.2 33.6Z" fill="#7fae32" />
+            <path d="M38.8 15 22 24.4V43l16.8-9.4Z" fill="#a5dd48" />
+            <path d="M22 5.5 38.8 15 22 24.4 5.2 15Z" fill="none" stroke="#e9ffc1" stroke-opacity=".55" />
+            <path d="M5.2 15 22 24.4V43L5.2 33.6Z" fill="none" stroke="#0b0f0a" stroke-opacity=".35" />
+            <path d="M38.8 15 22 24.4V43l16.8-9.4Z" fill="none" stroke="#0b0f0a" stroke-opacity=".22" />
+            <path d="M22 24.4V43" stroke="#f2ffd8" stroke-opacity=".28" />
+          </svg>
+          <span class="brand-copy">
+            <span class="brand-word">SKIN<span>LAB</span></span>
+            <span class="brand-sub">正版皮肤实验室</span>
+          </span>
+        </a>
+
+        <div class="header-side">
+          <span class="data-badge"><i></i> MOJANG 数据源</span>
+          <a class="header-link" href="#studio">
+            开始检视
+            <svg viewBox="0 0 16 16" aria-hidden="true">
+              <path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="square" />
+            </svg>
+          </a>
+        </div>
+      </header>
+
+      <main>
+        <section class="hero" aria-labelledby="hero-title">
+          <div class="hero-copy">
+            <p class="eyebrow">
+              <span class="eyebrow-index">01</span>
+              <span>MINECRAFT SKIN VIEWER</span>
+              <span class="eyebrow-line"></span>
+            </p>
+            <h1 id="hero-title">
+              把方块人<br />
+              <span class="title-accent">转起来</span><span class="title-dot">。</span>
+            </h1>
+            <p class="hero-description">
+              输入 Java 版正版 ID，读取 Mojang 官方档案。<br />
+              360° 立体检视，皮肤 PNG 一键带走。
+            </p>
+            <ul class="hero-tags" aria-label="功能">
+              <li>实时查询</li>
+              <li>3D 渲染</li>
+              <li>原图下载</li>
+            </ul>
+          </div>
+
+          <div class="search-card">
+            <div class="search-card-top">
+              <span>PLAYER LOOKUP</span>
+              <span class="search-code">// 001</span>
+            </div>
+            <form id="searchForm" novalidate>
+              <label for="username">正版游戏 ID</label>
+              <div class="search-field">
+                <span class="input-prefix" aria-hidden="true">@</span>
+                <input
+                  id="username"
+                  name="username"
+                  type="text"
+                  inputmode="text"
+                  autocomplete="off"
+                  autocapitalize="off"
+                  spellcheck="false"
+                  maxlength="16"
+                  placeholder="例如 Notch"
+                  aria-describedby="searchNote"
+                />
+                <button class="search-submit" id="searchBtn" type="submit">
+                  <span>召唤</span>
+                  <svg viewBox="0 0 18 18" aria-hidden="true">
+                    <path d="M3 9h11M9.5 4.5 14 9l-4.5 4.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="square" />
+                  </svg>
+                </button>
+              </div>
+            </form>
+            <div class="quick-row">
+              <span class="quick-label">试试</span>
+              <button class="quick-name" type="button" data-name="Notch">Notch</button>
+              <button class="quick-name" type="button" data-name="jeb_">jeb_</button>
+              <button class="quick-name" type="button" data-name="Dinnerbone">Dinnerbone</button>
+            </div>
+            <p class="search-note" id="searchNote">
+              仅支持 Java 版正版账号 · 数据来自 Mojang
+            </p>
+          </div>
+        </section>
+
+        <section class="studio" id="studio" aria-label="皮肤检视台">
+          <div class="viewer-card">
+            <div class="panel-bar">
+              <span class="panel-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+              <span class="panel-title">SKIN_PREVIEW.EXE</span>
+              <span class="live-pill"><i></i> LIVE</span>
+            </div>
+
+            <div class="viewer-stage is-loading" id="viewerStage">
+              <div class="stage-grid" aria-hidden="true"></div>
+              <div class="stage-floor" aria-hidden="true"></div>
+              <div class="stage-glow" aria-hidden="true"></div>
+              <div class="stage-ring" aria-hidden="true"></div>
+              <span class="stage-cube stage-cube--a" aria-hidden="true"></span>
+              <span class="stage-cube stage-cube--b" aria-hidden="true"></span>
+              <span class="stage-cube stage-cube--c" aria-hidden="true"></span>
+
+              <canvas id="skinCanvas" aria-label="Minecraft 皮肤 3D 模型"></canvas>
+
+              <div class="empty-state" id="emptyState" hidden>
+                <div class="empty-head" aria-hidden="true">
+                  <span class="empty-head-top"></span>
+                  <span class="empty-head-left"></span>
+                  <span class="empty-head-right"></span>
+                </div>
+                <strong>等待召唤</strong>
+                <p>输入一个正版 ID，让方块人登场。</p>
+              </div>
+
+              <div class="loading-state" id="loadingState">
+                <div class="pixel-loader" aria-hidden="true">
+                  <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+                </div>
+                <p id="loadingText">正在连接 Mojang…</p>
+                <div class="loading-track" aria-hidden="true"><span></span></div>
+              </div>
+
+              <div class="viewer-meta">
+                <span class="viewer-badge" id="viewerBadge">
+                  <i></i>
+                  <span id="viewerBadgeText">DEMO / NOTCH</span>
+                </span>
+                <span class="viewer-hint" id="viewerHint">
+                  <svg viewBox="0 0 16 16" aria-hidden="true">
+                    <path d="M8 2.5a3 3 0 0 1 3 3v5a3 3 0 0 1-6 0v-5a3 3 0 0 1 3-3Z" fill="none" stroke="currentColor" stroke-width="1.2" />
+                    <path d="M8 5v4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" />
+                  </svg>
+                  <span id="viewerHintText">拖动旋转 · 滚轮缩放 · 点击人物压扁/复原</span>
+                </span>
+              </div>
+            </div>
+
+            <div class="viewer-toolbar">
+              <div class="tool-group">
+                <span class="tool-label">动作</span>
+                <div class="segmented" role="group" aria-label="角色动作">
+                  <button type="button" class="is-active" data-animation="idle" aria-pressed="true">待机</button>
+                  <button type="button" data-animation="walk" aria-pressed="false">行走</button>
+                  <button type="button" data-animation="run" aria-pressed="false">奔跑</button>
+                </div>
+              </div>
+              <div class="tool-group mode-group">
+                <span class="tool-label">变形</span>
+                <div class="mode-switch" id="squashModeSwitch" role="group" aria-label="变形模式">
+                  <span class="mode-indicator" aria-hidden="true"></span>
+                  <button type="button" data-mode="manual" class="is-active" aria-pressed="true">手动</button>
+                  <button type="button" data-mode="auto" aria-pressed="false">自动</button>
+                </div>
+                <label class="interval-control" for="autoSquashInterval">
+                  <span class="interval-label">间隔</span>
+                  <span class="interval-select-wrap">
+                    <select class="interval-select" id="autoSquashInterval" aria-label="自动变形间隔" title="自动模式的时间间隔">
+                      <option value="100">0.1s</option>
+                      <option value="200">0.2s</option>
+                      <option value="300" selected>0.3s</option>
+                      <option value="400">0.4s</option>
+                      <option value="500">0.5s</option>
+                    </select>
+                  </span>
+                </label>
+              </div>
+              <div class="toolbar-right">
+                <button type="button" class="tool-button is-on" id="autoRotateBtn" aria-pressed="true">
+                  <svg viewBox="0 0 18 18" aria-hidden="true">
+                    <path d="M14.2 6.3A5.8 5.8 0 1 0 15 9" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="square" />
+                    <path d="M14.5 2.8v3.8h-3.8" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="square" />
+                  </svg>
+                  自动旋转
+                </button>
+                <button type="button" class="tool-button" id="resetBtn" title="复位视角与体型">
+                  <svg viewBox="0 0 18 18" aria-hidden="true">
+                    <path d="M3.3 7.2h3.5V3.7" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="square" />
+                    <path d="M3.6 7a5.8 5.8 0 1 1-.2 4.2" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="square" />
+                  </svg>
+                  复位
+                </button>
+                <button
+                  type="button"
+                  class="tool-button bgm-button"
+                  id="bgmToggle"
+                  aria-pressed="false"
+                  aria-label="播放 BGM：朋友的酒 DJ版"
+                  title="播放 / 关闭 BGM：朋友的酒 DJ版"
+                >
+                  <svg viewBox="0 0 18 18" aria-hidden="true">
+                    <path d="M7 13V4.2L14 3v8.2" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="square" />
+                    <circle cx="5.4" cy="13.1" r="2" fill="none" stroke="currentColor" stroke-width="1.4" />
+                    <circle cx="12.4" cy="11.9" r="2" fill="none" stroke="currentColor" stroke-width="1.4" />
+                  </svg>
+                  BGM
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <aside class="profile-panel" aria-label="玩家档案">
+            <div class="profile-top">
+              <span class="section-label">PLAYER FILE</span>
+              <span class="edition-tag">JAVA</span>
+            </div>
+
+            <div class="profile-placeholder" id="profilePlaceholder">
+              <div class="placeholder-mark" aria-hidden="true">
+                <svg viewBox="0 0 36 36">
+                  <path d="M18 4 32 12v14L18 34 4 26V12Z" fill="none" stroke="currentColor" stroke-width="1.4" />
+                  <path d="M18 12v8M14 16h8" stroke="currentColor" stroke-width="1.4" stroke-linecap="square" />
+                </svg>
+              </div>
+              <strong>等待玩家档案</strong>
+              <p>搜索后这里会显示 UUID、皮肤模型和下载入口。</p>
+            </div>
+
+            <div class="profile-content" id="profileContent" hidden>
+              <div class="player-identity">
+                <div class="player-head" id="playerHead" aria-hidden="true">
+                  <span class="head-shine"></span>
+                </div>
+                <div class="player-copy">
+                  <span class="verified"><i></i> 正版档案</span>
+                  <h2 id="playerName">—</h2>
+                  <button class="uuid-button" id="copyUuidBtn" type="button" title="复制完整 UUID">
+                    <code id="uuidText">—</code>
+                    <svg viewBox="0 0 16 16" aria-hidden="true">
+                      <rect x="5" y="5" width="8" height="8" rx="1" fill="none" stroke="currentColor" stroke-width="1.2" />
+                      <path d="M11 5V3H3v8h2" fill="none" stroke="currentColor" stroke-width="1.2" />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+
+              <dl class="stat-grid">
+                <div>
+                  <dt>MODEL</dt>
+                  <dd id="modelValue">—</dd>
+                </div>
+                <div>
+                  <dt>FORMAT</dt>
+                  <dd id="formatValue">—</dd>
+                </div>
+                <div>
+                  <dt>EDITION</dt>
+                  <dd>JAVA</dd>
+                </div>
+              </dl>
+
+              <div class="profile-actions">
+                <a class="action action-primary" id="downloadBtn" href="#" download>
+                  <svg viewBox="0 0 18 18" aria-hidden="true">
+                    <path d="M9 2.5v8M5.5 7.5 9 11l3.5-3.5M3 14.5h12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="square" />
+                  </svg>
+                  <span>下载皮肤 PNG</span>
+                  <span class="action-tag">原图</span>
+                </a>
+                <button class="action action-ghost" id="copyUuidAction" type="button">
+                  <svg viewBox="0 0 18 18" aria-hidden="true">
+                    <rect x="6" y="6" width="9" height="9" rx="1.2" fill="none" stroke="currentColor" stroke-width="1.3" />
+                    <path d="M12 6V3H3v9h3" fill="none" stroke="currentColor" stroke-width="1.3" />
+                  </svg>
+                  <span>复制 UUID</span>
+                </button>
+              </div>
+
+              <div class="texture-card">
+                <div class="texture-head">
+                  <span>皮肤纹理</span>
+                  <span id="textureSize">64 × 64</span>
+                </div>
+                <div class="texture-view">
+                  <img id="textureImg" alt="玩家皮肤原始纹理" />
+                  <span class="texture-scan" aria-hidden="true"></span>
+                  <span class="texture-corner texture-corner--tl" aria-hidden="true"></span>
+                  <span class="texture-corner texture-corner--br" aria-hidden="true"></span>
+                </div>
+                <p class="texture-tip">Mojang 原始纹理 · 1:1 下载</p>
+              </div>
+
+              <div class="cape-card" id="capeCard" hidden>
+                <div class="cape-copy">
+                  <span class="section-label">CAPE DETECTED</span>
+                  <strong>这位玩家装备了披风</strong>
+                  <a id="capeDownload" href="#" download>下载披风 PNG</a>
+                </div>
+                <div class="cape-preview">
+                  <img id="capeImg" alt="玩家披风纹理" />
+                </div>
+              </div>
+
+              <div class="recent-block">
+                <div class="recent-head">
+                  <span class="section-label">RECENT / 最近查看</span>
+                  <button type="button" id="clearHistoryBtn">清空</button>
+                </div>
+                <div class="recent-list" id="recentList"></div>
+              </div>
+            </div>
+          </aside>
+        </section>
+
+        <section class="feature-strip" aria-label="说明">
+          <div class="feature-item">
+            <span class="feature-index">A</span>
+            <div>
+              <strong>官方档案</strong>
+              <p>通过 Mojang API 校验正版 ID，并解析官方皮肤纹理地址。</p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <span class="feature-index">B</span>
+            <div>
+              <strong>立体检视</strong>
+              <p>自动识别 Classic / Slim 手臂模型，支持披风与动作预览。</p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <span class="feature-index">C</span>
+            <div>
+              <strong>原图带走</strong>
+              <p>不做二次压缩，直接下载原始分辨率的 PNG 皮肤文件。</p>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <div class="footer-brand">
+          <span>SKINLAB</span>
+          <span class="footer-slash">/</span>
+          <span>方块皮肤实验室</span>
+        </div>
+        <p>
+          非 Mojang / Microsoft 官方产品。皮肤纹理版权归原玩家所有。
+        </p>
+        <span class="footer-build">BUILT FOR THE BLOCKY ONES</span>
+      </footer>
+    </div>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <audio id="bgmAudio" src="/audio/friends-wine-dj.mp3" loop preload="none" aria-hidden="true"></audio>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
