@@ -38,11 +38,11 @@ public/audio/friends-wine-dj.mp3
 
 ## 免费公网部署
 
-推荐使用 Vercel Hobby 免费方案（通常不需要绑卡）：
+推荐使用 Netlify 免费方案（通常不需要绑卡，`*.netlify.app` 在部分网络可正常访问）：
 
-见 [VERCEL.md](VERCEL.md)。
+见 [NETLIFY.md](NETLIFY.md)。
 
-也可以使用 Render，项目附带 `render.yaml` 和 [DEPLOY.md](DEPLOY.md)；Render 可能要求银行卡做身份验证。免费实例会休眠，首次访问可能需要几十秒冷启动。
+Vercel 配置也已保留（[VERCEL.md](VERCEL.md)），但 `*.vercel.app` 在部分网络会被 DNS 污染，可能打不开。Render 则可能要求银行卡做身份验证。
 
 ## 本地运行
 
