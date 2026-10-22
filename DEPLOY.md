@@ -34,7 +34,7 @@ npm install --include=dev && npm run build
 npm start
 ```
 
-环境变量已由 `render.yaml` 配置：`HOST=0.0.0.0`、`NODE_ENV=production`、`NODE_VERSION=22`。
+环境变量已由 `render.yaml` 配置：`HOST=0.0.0.0`、`NODE_ENV=production`、`NODE_VERSION=22`、`PORT=10000`。
 
 ## 3. 注意事项
 
