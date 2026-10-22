@@ -44,6 +44,8 @@ public/audio/friends-wine-dj.mp3
 
 Vercel 配置也已保留（[VERCEL.md](VERCEL.md)），但 `*.vercel.app` 在部分网络会被 DNS 污染，可能打不开。Render 则可能要求银行卡做身份验证。
 
+免费域名方案见 [FREE_DOMAIN.md](FREE_DOMAIN.md)。
+
 ## 本地运行
 
 环境要求：Node.js 20+，推荐使用 pnpm。
