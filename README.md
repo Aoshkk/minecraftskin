@@ -38,9 +38,11 @@ public/audio/friends-wine-dj.mp3
 
 ## 免费公网部署
 
-项目附带 `render.yaml` 和详细步骤，可部署到 Render 免费 Web Service，让其他人通过公网地址访问：
+推荐使用 Vercel Hobby 免费方案（通常不需要绑卡）：
 
-见 [DEPLOY.md](DEPLOY.md)。项目已初始化为 Git 仓库，可用 `push-to-github.bat` 推送到 GitHub。免费实例会休眠，首次访问可能需要几十秒冷启动。
+见 [VERCEL.md](VERCEL.md)。
+
+也可以使用 Render，项目附带 `render.yaml` 和 [DEPLOY.md](DEPLOY.md)；Render 可能要求银行卡做身份验证。免费实例会休眠，首次访问可能需要几十秒冷启动。
 
 ## 本地运行
 
